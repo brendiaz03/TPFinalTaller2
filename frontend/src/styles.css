@@ -1,1 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
+/* Aplicar la fuente a todo el body */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Fondo suave para todo el cuerpo */
+    color: #485497;
+  }
+  
+  /* Estilo para el header */
+  header {
+    padding: 2em;
+    background-color: #ffffff; /* Fondo blanco para el header */
+    border-bottom: 2px solid #e0e0e0; /* Línea sutil en la parte inferior */
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+  }
+  
+  /* Contenedor dentro del header */
+  header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 6em; /* Deja espacio a la izquierda para la imagen */
+  }
+  
+  /* Alinear el logo a la izquierda en la parte superior y hacerlo redondo */
+  header img {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;  /* Imagen redonda */
+    border: 3px solid #485497; /* Bordes suaves en el logo */
+  }
+  
+  /* Estilo para los títulos h1 y h2 */
+  .home h1, h2, {
+    margin: 1em 0;
+    color: black;; /* Color de texto más oscuro para mejorar la legibilidad */
+    
+  }
+  
+  /* Estilo para el título principal h1 */
+  .home h1 {
+    font-size: 2.5em;
+    font-weight: 600; /* Peso de fuente más pesado para destacar el título */
+    color: black; /* Color amigable y profesional */
+  }
+  
+  /* Estilo para el subtítulo h2 */
+  .home h2 {
+    font-size: 1.5em;
+    font-weight: 400; /* Peso de fuente normal para el subtítulo */
+    color: #485497; /* Color gris suave para el subtítulo */
+    margin-top: 10px;
+  }
+  
+  
+  /* Botones con estilo más amigable */
+  button {
+    background-color: #5c6bc0; /* Color de fondo del botón */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado cómodo */
+    border: none;
+    border-radius: 30px; /* Bordes redondeados */
+    font-size: 1em;
+    cursor: pointer; /* Cursor para indicar que es clickeable */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+  }
+  
+  button:hover {
+    background-color: #3f4f97; /* Color de fondo más oscuro cuando se pasa el mouse */
+  }
+  
+  .subrayada {
+    text-decoration: underline;  /* Subraya el texto */
+    font-weight: bold;           /* Hace la palabra más destacada */
+    color: #3f4f97;              /* Color azul */
+  }
+  /* Estilo para el footer */
+  footer p{
+    font-weight: bold;
+    padding: 2em;
+    background-color: #ffffff; /* Fondo blanco */
+    border-top: 2px solid #e0e0e0; /* Línea sutil en la parte superior */
+    text-align: center;
+    font-size: 1.1em;
+    color: #485497; /* Color gris suave para el texto */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave en la parte superior */
+  }

@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
 //Agrego el componente Home
-import { HomeComponent } from './home/home.component';
+import { EditarComponent } from './editar/editar.component';
 
 export const routes: Routes = [ 
     //Agrego el path componente Home
-    { path: 'home', component: HomeComponent } //Defino la ruta del componente
+    { path: 'editar', component: EditarComponent } //Defino la ruta del componente
 ];

@@ -1,47 +1,23 @@
-# Dependencies
-/node_modules
-
-# Build output directories
-/dist
-/tmp
-/out-tsc
-
-# Angular-specific
-/.angular/cache
-/coverage
-
-# Log files
-npm-debug.log
-yarn-error.log
-testem.log
-/libpeerconnection.log
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# System Files
-.DS_Store
+# Dependencias de Node.js
+node_modules/
+ 
+# Archivos de configuración específicos de IDEs
+.idea/
+.vscode/
+ 
+# Archivos de log
+*.log
+ 
+# Archivos de configuración de sistema operativo (como Thumbs.db en Windows)
 Thumbs.db
+ 
+# Archivos temporales de OS
+.DS_Store
+ 
+# Carpeta de distribución del build (si usas algún tipo de compilación, como TypeScript o Webpack)
+dist/
+ 
+# Archivos de configuración de NPM
+package-lock.json
 
-# Misc files
-/typings
-/connect.lock
-
-# TypeScript specific (optional, if using TypeScript)
-*.tsbuildinfo
-*.js.map
-
-# .env files
-.envgit diff
+.env

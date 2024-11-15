@@ -14,40 +14,24 @@
     />
     <button type="submit" class="add-task-btn">Agregar</button>
   </form>
+  
   <ul class="task-list">
-    <li class="task-item">
+    <!-- Iterar sobre las tareas -->
+    <li *ngFor="let tarea of tareas" class="task-item">
       <!-- CHECKBOX DE TAREA COMPLETADA-->
       <input type="checkbox" class="task-checkbox" />
-      <span class="task-title">Tarea I</span>
+      <span class="task-title">{{ tarea.titulo }}</span>
       <!-- BOTÓN EDITAR-->
       <button class="editar">
-        <a routerLink="/editar" routerLinkActive="active"
-          ><img
+        <a routerLink="/editar" routerLinkActive="active">
+          <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s"
             alt="Editar"
-        /></a>
+          />
+        </a>
       </button>
       <!-- BOTÓN ELIMINAR-->
-      <button class="eliminar">
-        <img
-          src="https://static.vecteezy.com/system/resources/thumbnails/006/692/167/small/bin-icon-template-black-color-editable-bin-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg"
-          alt="Eliminar"
-        />
-      </button>
-    </li>
-    <li class="task-item">
-      <input type="checkbox" class="task-checkbox" />
-      <span class="task-title">Tarea II</span>
-      <!-- BOTÓN EDITAR-->
-      <button class="editar">
-        <a routerLink="/editar" routerLinkActive="active"
-          ><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s"
-            alt="Editar"
-        /></a>
-      </button>
-      <!-- BOTÓN ELIMINAR-->
-      <button class="eliminar">
+      <button class="eliminar" (click)="eliminarTarea(tarea.id)">
         <img
           src="https://static.vecteezy.com/system/resources/thumbnails/006/692/167/small/bin-icon-template-black-color-editable-bin-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg"
           alt="Eliminar"

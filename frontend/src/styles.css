@@ -1,1 +1,255 @@
-/* You can add global styles to this file, and also import other style files */
+/* Aplicar la fuente a todo el body */
+.body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Fondo suave para todo el cuerpo */
+    color: #485497;
+  }
+  
+  /* Estilo para el header */
+  header {
+    display: block;
+    background-color: #ffffff; /* Fondo blanco para el header */
+    border-bottom: 2px solid #e0e0e0; /* Línea sutil en la parte inferior */
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    width: 100%;
+    height: 9em;
+    }
+  
+  /* Contenedor dentro del header */
+  header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  
+  /* Alinear el logo a la izquierda en la parte superior y hacerlo redondo */
+  header img {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;  /* Imagen redonda */
+    border: 3px solid #485497; /* Bordes suaves en el logo */
+  }
+
+  main img{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;  /* Imagen redonda */
+    border: 3px solid #485497; /* Bordes suaves en el logo */
+  }
+ 
+  /* Estilo para el título principal h1 */
+  .home h1 {
+    font-size: 2.5em;
+    font-weight: 600; /* Peso de fuente más pesado para destacar el título */
+    text-align: center;
+    color: #6174df;
+  }
+  
+  /* Estilo para el subtítulo h2 */
+  .home h2, .container h2 {
+    font-size: 1.5em;
+    font-weight: 400; /* Peso de fuente normal para el subtítulo */
+    color: #485497; /* Color gris suave para el subtítulo */
+    text-align: center;
+  }
+  
+  /* Botones con estilo más amigable */
+  button {
+    border: 1px;
+    border-color: #485497;
+      
+  }
+  /*
+  button:hover {
+    background-color: #3f4f97; /* Color de fondo más oscuro cuando se pasa el mouse 
+    border: 3px;
+  }*/
+  
+  .subrayada {
+    text-decoration: underline;  /* Subraya el texto */
+    font-weight: bold;           /* Hace la palabra más destacada */
+    color: #3f4f97;              /* Color azul */
+  }
+  /* Estilo para el footer */
+
+  footer{
+    width: 100%;
+    font-weight: bold;
+    padding: 1em;
+    background-color: #ffffff; /* Fondo blanco */
+    border-top: 2px solid #e0e0e0; /* Línea sutil en la parte superior */
+    text-align: center;
+    font-size: 1.1em;
+    color: #485497; /* Color gris suave para el texto */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave en la parte superior */
+  }
+
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+}
+
+main {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+.task-form {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-input {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.add-task-btn {
+    padding: 10px;
+    background-color: #485497; /*var(--secondary-color);*/
+    color: #fff;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-task-btn:hover {
+    background-color: #6174df;
+    font-weight: bold;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    /*margin-bottom: 10px;*/
+}
+
+/* Contenedor para la lista de tareas */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espacio entre los elementos para alineación */
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Checkbox y texto de la tarea en una sola fila */
+.task-checkbox {
+  margin-right: 10px;
+}
+
+.task-title {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+/* Botones con estilos */
+.edit-btn, .delete-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #2980b9;
+}
+
+.delete-btn {
+  background-color: var(--danger-color);
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Suavizar el color del borde de las tareas */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0; /* Borde ligeramente matizado en lugar de blanco */
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Checkbox y texto de la tarea en una sola fila */
+.task-checkbox {
+  margin-right: 10px;
+}
+
+.task-title {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+/* Estilos para los botones Editar y Eliminar */
+button.editar, button.eliminar {
+  background: none; /* Eliminar fondo */
+  border: none; /* Sin borde alrededor de la imagen */
+  margin-left: 10px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s ease; /* Efecto de hover */
+}
+
+/* Efecto hover para los botones de imagen */
+button.editar:hover, button.eliminar:hover {
+  transform: scale(1.1); /* Ampliación leve al hacer hover */
+}

@@ -58,14 +58,19 @@ app.put('/items/:id', (req, res) => {
 
 // Endpoint para borrar una tarea por ID (DELETE)
 app.delete('/items/:id', (req, res) => {
-    const { id } = req.params;
-    const query = 'DELETE FROM tareas WHERE id = ?';
-    db.query(query, [id], (err, result) => {
-      if (err) return res.status(500).send('Error al eliminar la tarea');
-      if (result.affectedRows === 0) return res.status(404).send('Tarea no encontrada');
-      res.send('Item eliminado');
-    });
+  const { id } = req.params;
+  const query = 'DELETE FROM tareas WHERE id = ?';
+  db.query(query, [id], (err, result) => {
+    if (err) return res.status(500).json({ message: 'Error al eliminar la tarea' });
+    if (result.affectedRows === 0) return res.status(404).json({ message: 'Tarea no encontrada' });
+
+    // Asegurarnos de devolver un JSON válido
+    res.status(200).json({ message: 'Item eliminado' });
   });
+});
+
+
+
 
 app.listen(port, () => {
   console.log(`API escuchando y funcionando en http://localhost:${port}`);

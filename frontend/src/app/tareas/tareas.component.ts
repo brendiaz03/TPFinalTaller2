@@ -48,8 +48,15 @@ export class TareasComponent implements OnInit {
   }
 
   eliminarTarea(id: number): void {
-    this.tareasService.eliminarTarea(id).subscribe(() => {
-      this.tareas = this.tareas.filter((tarea) => tarea.id !== id);
-    });
+    this.tareasService.eliminarTarea(id).subscribe(
+      (data) => {
+        console.log(data);  // Aquí puedes verificar que la respuesta sea el objeto { message: 'Item eliminado' }
+        this.tareas = this.tareas.filter((tarea) => tarea.id !== id);
+      },
+      (error) => {
+        console.error('Error al eliminar la tarea:', error);
+      }
+    );
   }
+  
 }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TareasService {
-  private apiUrl = 'http://localhost:3000/'; // URL base de tu API
+  private apiUrl = 'http://localhost:3000/items'; // URL base de tu API
 
   constructor(private http: HttpClient) {}
 
@@ -33,7 +33,7 @@ export class TareasService {
    * @param tarea - Objeto con los datos de la tarea.
    */
   crearTarea(tarea: { titulo: string; descripcion: string }): Observable<any> {
-    return this.http.post<any>(this.apiUrl, tarea);
+    return this.http.post<any>(`${this.apiUrl}`, tarea);
   }
 
   /**

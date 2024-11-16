@@ -1,12 +1,16 @@
 <div class="container">
-  <form class="task-form">
+ <form class="task-form" (ngSubmit)="agregarTarea()">
     <input
+      [(ngModel)]="nuevaTarea.titulo"
+      name="titulo"
       type="text"
       class="task-input"
       placeholder="Ingrese el título de la tarea"
       required
     />
     <input
+      [(ngModel)]="nuevaTarea.descripcion"
+      name="descripcion"
       type="text"
       class="task-input"
       placeholder="Ingrese una descripción para la tarea"
@@ -14,7 +18,6 @@
     />
     <button type="submit" class="add-task-btn">Agregar</button>
   </form>
-  
   <ul class="task-list">
     <!-- Iterar sobre las tareas -->
     <li *ngFor="let tarea of tareas" class="task-item">

@@ -2,7 +2,12 @@ const express = require('express');
 const db = require('./db');
 const app = express();
 const port = 3000;
-
+const cors = require('cors');
+app.use(cors({
+  origin: 'http://localhost:4200', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  allowedHeaders: ['Content-Type', 'Authorization'], 
+}));
 app.use(express.json());
 
 // Endpoint para crear una nueva tarea (Post)

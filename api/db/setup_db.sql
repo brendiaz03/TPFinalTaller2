@@ -6,5 +6,6 @@ USE db_todoapp;
 CREATE TABLE Tareas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
-    descripcion TEXT
+    descripcion TEXT,
+    completada BOOLEAN DEFAULT FALSE
 );

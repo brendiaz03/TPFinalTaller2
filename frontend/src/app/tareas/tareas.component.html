@@ -1,5 +1,4 @@
-<div class="container">
- <form class="task-form" (ngSubmit)="agregarTarea()">
+<!-- <form class="task-form" (ngSubmit)="agregarTarea()">
     <input
       [(ngModel)]="nuevaTarea.titulo"
       name="titulo"
@@ -17,29 +16,51 @@
       required
     />
     <button type="submit" class="add-task-btn">Agregar</button>
-  </form>
-  <ul class="task-list">
-    <!-- Iterar sobre las tareas -->
-    <li *ngFor="let tarea of tareas" class="task-item">
-      <!-- CHECKBOX DE TAREA COMPLETADA-->
-      <input type="checkbox" class="task-checkbox" />
-      <span class="task-title">{{ tarea.titulo }}</span>
-      <!-- BOTÓN EDITAR-->
-      <button class="editar">
-        <a routerLink="/editar" routerLinkActive="active">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s"
-            alt="Editar"
-          />
-        </a>
-      </button>
-      <!-- BOTÓN ELIMINAR-->
-      <button class="eliminar" (click)="eliminarTarea(tarea.id)">
-        <img
-          src="https://static.vecteezy.com/system/resources/thumbnails/006/692/167/small/bin-icon-template-black-color-editable-bin-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg"
-          alt="Eliminar"
-        />
-      </button>
-    </li>
-  </ul>
+  </form> -->
+<div class="container px-5">
+  <div class="container-boton">
+    <button class="add-task-btn ml-auto">Agregar Tarea</button>
+  </div>
+  <div *ngIf="tareas.length === 0" class="no-data">
+    <img
+      src="/frontend/src/assets/imagenes/box.png"
+      alt="No data"
+      class="no-data-icon"
+    />
+    <p>Aún no hay datos cargados</p>
+  </div>
+
+  <table *ngIf="tareas.length > 0" class="task-table">
+    <thead>
+      <tr>
+        <th>Realizada</th>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tarea of tareas">
+        <td><input type="checkbox" [checked]="tarea.completada" readonly /></td>
+        <td>{{ tarea.titulo }}</td>
+        <td>{{ tarea.descripcion }}</td>
+        <td class="actions">
+          <button class="editar">
+            <a routerLink="/editar" routerLinkActive="active">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s"
+                alt="Editar"
+              />
+            </a>
+          </button>
+          <button class="eliminar" (click)="eliminarTarea(tarea.id)">
+            <img
+              src="https://static.vecteezy.com/system/resources/thumbnails/006/692/167/small/bin-icon-template-black-color-editable-bin-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg"
+              alt="Eliminar"
+            />
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

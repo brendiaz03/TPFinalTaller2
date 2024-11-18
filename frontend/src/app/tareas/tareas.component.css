@@ -1,0 +1,82 @@
+/* Para contenedor */
+.container {
+  height: 20rem;
+}
+/* Para contenedor boton */
+.container-boton {
+  display: flex;
+  justify-content: end;
+}
+/* Para la tabla */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.task-table th,
+.task-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.task-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.task-table td {
+  border-bottom: 1px solid #ddd;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.actions img {
+  width: 20px;
+  height: 20px;
+}
+
+.no-data {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.no-data-icon {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .task-table,
+  .task-table th,
+  .task-table td {
+    display: block;
+  }
+
+  .task-table th {
+    display: none;
+  }
+
+  .task-table td {
+    border: 1px solid #ddd;
+    margin: 5px 0;
+  }
+
+  .task-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}

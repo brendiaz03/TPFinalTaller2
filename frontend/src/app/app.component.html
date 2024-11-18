@@ -1,113 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Taskerly</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body class="body">
     <header>
       <div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUI7rN4pfXTqRNjOuxVvVaaFybt-7cu4Lw_A&s" alt="Logo" class="home">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUI7rN4pfXTqRNjOuxVvVaaFybt-7cu4Lw_A&s"
+          alt="Logo"
+          class="home"
+        />
         <h1 class="home">Bienvenido a Taskerly</h1>
-        <h2 class="home">Organizar tus tareas diarias, nunca fue tan <span class="subrayada">simple</span> y <span class="subrayada">rápido</span>.</h2>
+        <h3 class="home">
+          Organizar tus tareas diarias, nunca fue tan
+          <span class="subrayada">simple</span> y
+          <span class="subrayada">rápido</span>.
+        </h3>
       </div>
     </header>
 
     <main>
-      <div class="container">
-          <form class="task-form">
-              <input type="text" class="task-input" placeholder="Ingrese el título de la tarea" required>
-              <input type="text" class="task-input" placeholder="Ingrese una descripción para la tarea" required>
-              <button type="submit" class="add-task-btn">Agregar</button>
-          </form>
-    
-    <!--
-          <ul class="task-list">
-              <li class="task-item">
-              -->
-<!-- CHECKBOX DE TAREA COMPLETADA-->  
- <!--    
-<div class="cl-checkbox">
-  <input type="checkbox" 
-       id="checkbox{{item.id}}" 
-       [checked]="item.taskChecked" 
-       (change)="toggleTask(item)">
-
-</div>
--->    
-<!-- BOTÓN EDITAR-->
- <!--
-<div>
-<button mat-button (click)="openEditModal()" class="editar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s" alt="Editar"></button>
--->
-<!-- BOTÓN ELIMINAR-->
-<!--
-<button class="eliminar"><img src="https://static.vecteezy.com/system/resources/thumbnails/006/692/167/small/bin-icon-template-black-color-editable-bin-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg" alt="Eliminar"></button>
-</div>
-              </li>
-              <li class="task-item">
-                  <input type="checkbox" class="task-checkbox">
-                  <span class="task-title">Tarea II</span>
-              -->    
-  <!-- BOTÓN EDITAR OK   
-  <button class="editar"><a routerLink="/editar" routerLinkActive="active" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s" alt="Editar"></a></button>
- -->
-  <!-- PRUEBA MODAL>
-  <div *ngFor="let item of items">
-    <p>{{ item.name }}</p>
-    <button class="editar" mat-button (click)="openEditModal(item)"><a routerLink="/editar" routerLinkActive="active" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s" alt="Editar">Editar</a></button>
-  </div>  
-     CIERRO PRUEBA MODAL-->
-<!--
-     <button mat-button (click)="openEditModal()" class="editar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s" alt="Editar"></button>
--->
-
-  <!-- BOTÓN ELIMINAR-->
-   <!--   
-<button class="eliminar"><img src="https://static.vecteezy.com/system/resources/thumbnails/006/692/167/small/bin-icon-template-black-color-editable-bin-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg" alt="Eliminar"></button>
-   
-              </li>
-          </ul>
-      </div>
-    -->
-
-      <ul class="task-list">
-        <li class="task-item" *ngFor="let item of items">
-          <!-- CHECKBOX DE TAREA COMPLETADA-->          
-          <div class="cl-checkbox">
-            <input type="checkbox" 
-                   id="checkbox{{item.id}}" 
-                   [checked]="item.taskChecked" 
-                   (change)="toggleTask(item)">
-                   <span class="task-title">Tarea I</span>
-                   </div>
-          
-      
-          <!-- BOTÓN EDITAR-->
-          <div>
-            <button mat-button (click)="openEditModal()" class="editar">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s" alt="Editar">
-            </button>
-      
-            <!-- BOTÓN ELIMINAR-->
-            <button class="eliminar">
-              <img src="https://static.vecteezy.com/system/resources/thumbnails/006/692/167/small/bin-icon-template-black-color-editable-bin-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg" alt="Eliminar">
-            </button>
-          </div>
-        </li>
-      </ul>
-      </div> 
-
-    <router-outlet/>
-    
+      <router-outlet />
     </main>
 
     <footer>
       <p>&#169; Taller Web II - 2ºC 2024 - Todos los derechos reservados</p>
     </footer>
-    
   </body>
 </html>

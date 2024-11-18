@@ -6,9 +6,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-editar',
   standalone: true,
   imports: [],
-  templateUrl: './editar.component.html',
-  styleUrl: './editar.component.css'
+  templateUrl: './formulario.component.html',
+  styleUrl: './formulario.component.css',
 })
-export class EditarComponent {
-
-}
+export class FormularioComponent {}

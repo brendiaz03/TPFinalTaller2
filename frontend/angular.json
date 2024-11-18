@@ -82,13 +82,13 @@
             "assets": [
               "src/assets",
               "src/favicon.ico"
-            ]                
+            ],
+            "styles": [
+              "@angular/material/prebuilt-themes/magenta-violet.css"
+            ]
           } 
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }

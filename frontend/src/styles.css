@@ -110,7 +110,7 @@ main {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
     background-color: #fff;
     padding: 30px;
@@ -121,9 +121,17 @@ main {
 
 .task-form {
     display: grid;
-    gap: 10px;
+    gap: 15px;
     margin-bottom: 20px;
 }
+
+.task-form2 {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 350px;
+}
+
 
 .task-input {
     padding: 15px;
@@ -253,3 +261,156 @@ button.editar, button.eliminar {
 button.editar:hover, button.eliminar:hover {
   transform: scale(1.1); /* Ampliación leve al hacer hover */
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.alinear{
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*ESTILOS CHECKBOX*/
+.cl-checkbox {
+  position: relative;
+  display: inline-block;
+ }
+ 
+ /* Input */
+ .cl-checkbox > input {
+  cursor: pointer;
+  pointer-events: auto;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: 2;
+  position: absolute;
+  left: -10px;
+  top: -8px;
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: none;
+  outline: none;
+  transform: scale(1);
+  transition: opacity 0.3s, transform 0.2s;
+ }
+ 
+ /* Span */
+ .cl-checkbox > span {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+ }
+ 
+ /* Box */
+ .cl-checkbox > span::before {
+  pointer-events: none;
+  pointer-events: none;
+position: relative;
+z-index: 0;
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 3px 11px 3px 1px;
+  border: solid 2px;
+  /* Safari */
+  border-color: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
+  vertical-align: top;
+  transition: border-color 0.2s, background-color 0.2s;
+ }
+ 
+ /* Checkmark */
+ .cl-checkbox > span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  width: 10px;
+  height: 5px;
+  border: solid 2px transparent;
+  border-right: none;
+  border-top: none;
+  transform: translate(3px, 4px) rotate(-45deg);
+ }
+ 
+ /* Checked, Indeterminate */
+ .cl-checkbox > input:checked,
+ .cl-checkbox > input:indeterminate {
+  background-color: #018786;
+ }
+ 
+ .cl-checkbox > input:checked + span::before,
+ .cl-checkbox > input:indeterminate + span::before {
+  border-color: #018786;
+  background-color: #018786;
+ }
+ 
+ .cl-checkbox > input:checked + span::after,
+ .cl-checkbox > input:indeterminate + span::after {
+  border-color: #fff;
+ }
+ 
+ .cl-checkbox > input:indeterminate + span::after {
+  border-left: none;
+  transform: translate(4px, 3px);
+ }
+ 
+ /* Hover, Focus */
+ .cl-checkbox:hover > input {
+  opacity: 0.04;
+ }
+ 
+ .cl-checkbox > input:focus {
+  opacity: 0.12;
+ }
+ 
+ .cl-checkbox:hover > input:focus {
+  opacity: 0.16;
+ }
+ 
+ /* Active */
+ .cl-checkbox > input:active {
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
+ }
+ 
+ .cl-checkbox > input:active + span::before {
+  border-color: #85b8b7;
+ }
+ 
+ .cl-checkbox > input:checked:active + span::before {
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
+ }
+ 
+ /* Disabled */
+ .cl-checkbox > input:disabled {
+  opacity: 0;
+ }
+ 
+ .cl-checkbox > input:disabled + span {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: initial;
+ }
+ 
+ .cl-checkbox > input:disabled + span::before {
+  border-color: currentColor;
+ }
+ 
+ .cl-checkbox > input:checked:disabled + span::before,
+ .cl-checkbox > input:indeterminate:disabled + span::before {
+  border-color: transparent;
+  background-color: currentColor;
+ }
+ 

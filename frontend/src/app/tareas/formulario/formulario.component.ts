@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { Tarea, TareasService } from '../../core/service/api.service';
 import {
@@ -12,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-editar',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatDialogModule, FormsModule],
+  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatDialogModule, FormsModule],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css',
 })
@@ -30,6 +31,11 @@ export class FormularioComponent {
   }
 
   saveChanges(): void {
+
+    if (!this.tarea.titulo.trim() || !this.tarea.descripcion.trim()) {
+      return;
+    }
+
     const tareaGuardada: Tarea = {
       id: this.data?.id || 0,
       titulo: this.tarea.titulo,

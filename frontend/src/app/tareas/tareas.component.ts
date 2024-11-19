@@ -42,6 +42,19 @@ export class TareasComponent implements OnInit {
     });
   }
 
+  toggleCompletada(tarea: Tarea): void {
+    tarea.completada = !tarea.completada;
+    this.tareasService.editarTarea(tarea).subscribe(
+      (response) => {
+        console.log('Tarea actualizada con éxito');
+      },
+      (error) => {
+        console.error('Error al actualizar la tarea', error);
+        tarea.completada = !tarea.completada;
+      }
+    );
+  }
+
   openConfirmarModal(itemId: number, titulo: string): void {
     const dialogRef = this.dialog.open(ConfirmarModalComponent, {
       data: { id: itemId, titulo: titulo },

@@ -24,7 +24,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let tarea of tareas">
-        <td><input type="checkbox" [checked]="tarea.completada" readonly /></td>
+        <td>
+          <input
+            type="checkbox"
+            [checked]="tarea.completada"
+            (change)="toggleCompletada(tarea)"
+          />
+        </td>
         <td>{{ tarea.titulo }}</td>
         <td>{{ tarea.descripcion }}</td>
         <td class="actions">

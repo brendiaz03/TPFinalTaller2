@@ -37,19 +37,7 @@ app.get("/tareas", (req, res) => {
   });
 });
 
-// Endpoint para obtener una tarea por ID (GET)
-app.get("/tareas/:id", (req, res) => {
-  const { id } = req.params;
-  const query = "SELECT * FROM tareas WHERE id = ?";
-  db.query(query, [id], (err, results) => {
-    if (err)
-      return res.status(500).send("Error al obtener la tarea solicitada");
-    if (results.length === 0)
-      return res.status(404).send("Tarea no encontrada");
-    res.json(results[0]);
-  });
-});
-
+// Endpoint para editar una tarea(PUT)
 app.put("/tareas/:id", (req, res) => {
   const { id } = req.params;
   const { titulo, descripcion, completada } = req.body;
@@ -72,19 +60,6 @@ app.put("/tareas/:id", (req, res) => {
       completada,
     };
     res.status(200).json(updatedTask);
-  });
-});
-
-// Endpoint para marcar una tarea como completada (PATCH)
-app.patch("/tareas/:id/completada", (req, res) => {
-  const { id } = req.params;
-  const query = "UPDATE tareas SET completada = TRUE WHERE id = ?";
-  db.query(query, [id], (err, result) => {
-    if (err)
-      return res.status(500).send("Error al marcar la tarea como completada");
-    if (result.affectedRows === 0)
-      return res.status(404).send("Tarea no encontrada");
-    res.send("Tarea marcada como completada");
   });
 });
 

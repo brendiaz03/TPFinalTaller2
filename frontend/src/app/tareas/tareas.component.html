@@ -34,7 +34,10 @@
               alt="Editar"
             />
           </button>
-          <button class="eliminar" (click)="eliminarTarea(tarea.id)">
+          <button
+            class="eliminar"
+            (click)="openConfirmarModal(tarea.id, tarea.titulo)"
+          >
             <img
               src="https://static.vecteezy.com/system/resources/thumbnails/006/692/167/small/bin-icon-template-black-color-editable-bin-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg"
               alt="Eliminar"

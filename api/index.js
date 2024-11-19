@@ -88,15 +88,19 @@ app.patch("/tareas/:id/completada", (req, res) => {
   });
 });
 
-// Endpoint para borrar una tarea por ID (DELETE)
+// Endpoint para eliminar tarea por ID (DELETE)
 app.delete("/tareas/:id", (req, res) => {
   const { id } = req.params;
   const query = "DELETE FROM tareas WHERE id = ?";
   db.query(query, [id], (err, result) => {
-    if (err) return res.status(500).send("Error al eliminar la tarea");
-    if (result.affectedRows === 0)
+    if (err) {
+      console.error("Error al eliminar la tarea:", err);
+      return res.status(500).send("Error al eliminar la tarea");
+    }
+    if (result.affectedRows === 0) {
       return res.status(404).send("Tarea no encontrada");
-    res.send("Tarea eliminada");
+    }
+    res.status(200).json({ message: "Tarea eliminada" });
   });
 });
 

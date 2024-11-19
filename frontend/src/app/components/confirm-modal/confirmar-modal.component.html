@@ -1,7 +1,13 @@
-<h3 mat-dialog-title>
-  ¿Desea eliminar de forma permanente la tarea "{{ data.titulo }}"?
-</h3>
-<div mat-dialog-actions>
-  <button mat-button (click)="cancelar()">Cancelar</button>
-  <button mat-button (click)="confirmar()">Aceptar</button>
+<div class="container">
+  <h4 class="titulo-modal">
+    ¿Desea eliminar de forma permanente la tarea "{{ data.titulo }}"?
+  </h4>
+  <div class="cont-botones">
+    <div mat-dialog-actions>
+      <button class="edit-btn" mat-button (click)="cancelar()">Cancelar</button>
+      <button class="add-task-btn" mat-button (click)="confirmar()">
+        Aceptar
+      </button>
+    </div>
+  </div>
 </div>

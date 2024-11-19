@@ -3,7 +3,7 @@ CREATE DATABASE db_todoapp;
 USE db_todoapp;
 
 -- Creación de la tabla Tarea
-CREATE TABLE Tareas (
+CREATE TABLE Tarea (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     descripcion TEXT,

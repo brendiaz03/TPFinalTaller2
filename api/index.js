@@ -16,7 +16,7 @@ app.use(express.json());
 app.post("/tareas", (req, res) => {
   const { titulo, descripcion, completada = false } = req.body;
   const query =
-    "INSERT INTO tareas (titulo, descripcion, completada) VALUES (?, ?, ?)";
+    "INSERT INTO tarea (titulo, descripcion, completada) VALUES (?, ?, ?)";
   db.query(query, [titulo, descripcion, completada], (err, result) => {
     if (err) {
       console.error("Error al crear la tarea:", err);
@@ -30,7 +30,7 @@ app.post("/tareas", (req, res) => {
 
 // Endpoint para obtener todas las tareas (GET)
 app.get("/tareas", (req, res) => {
-  const query = "SELECT * FROM tareas";
+  const query = "SELECT * FROM tarea";
   db.query(query, (err, results) => {
     if (err) return res.status(500).send("Error al obtener las tareas");
     res.json(results);
@@ -42,7 +42,7 @@ app.put("/tareas/:id", (req, res) => {
   const { id } = req.params;
   const { titulo, descripcion, completada } = req.body;
   const query =
-    "UPDATE tareas SET titulo = ?, descripcion = ?, completada = ? WHERE id = ?";
+    "UPDATE tarea SET titulo = ?, descripcion = ?, completada = ? WHERE id = ?";
 
   db.query(query, [titulo, descripcion, completada, id], (err, result) => {
     if (err) {
@@ -66,7 +66,7 @@ app.put("/tareas/:id", (req, res) => {
 // Endpoint para eliminar tarea por ID (DELETE)
 app.delete("/tareas/:id", (req, res) => {
   const { id } = req.params;
-  const query = "DELETE FROM tareas WHERE id = ?";
+  const query = "DELETE FROM tarea WHERE id = ?";
   db.query(query, [id], (err, result) => {
     if (err) {
       console.error("Error al eliminar la tarea:", err);

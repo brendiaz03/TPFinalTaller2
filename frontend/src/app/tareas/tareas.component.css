@@ -1,6 +1,7 @@
 /* Para contenedor */
 .container {
   height: 20rem;
+  overflow: scroll;
 }
 /* Para contenedor boton */
 .container-boton {

@@ -1,25 +1,8 @@
-<!-- <form class="task-form" (ngSubmit)="agregarTarea()">
-    <input
-      [(ngModel)]="nuevaTarea.titulo"
-      name="titulo"
-      type="text"
-      class="task-input"
-      placeholder="Ingrese el título de la tarea"
-      required
-    />
-    <input
-      [(ngModel)]="nuevaTarea.descripcion"
-      name="descripcion"
-      type="text"
-      class="task-input"
-      placeholder="Ingrese una descripción para la tarea"
-      required
-    />
-    <button type="submit" class="add-task-btn">Agregar</button>
-  </form> -->
 <div class="container px-5">
   <div class="container-boton">
-    <button class="add-task-btn ml-auto">Agregar Tarea</button>
+    <button class="add-task-btn ml-auto" (click)="openFormulario()">
+      Agregar Tarea
+    </button>
   </div>
   <div *ngIf="tareas.length === 0" class="no-data">
     <img
@@ -33,7 +16,7 @@
   <table *ngIf="tareas.length > 0" class="task-table">
     <thead>
       <tr>
-        <th>Realizada</th>
+        <th>Completada</th>
         <th>Título</th>
         <th>Descripción</th>
         <th>Acciones</th>
@@ -45,13 +28,11 @@
         <td>{{ tarea.titulo }}</td>
         <td>{{ tarea.descripcion }}</td>
         <td class="actions">
-          <button class="editar">
-            <a routerLink="/editar" routerLinkActive="active">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s"
-                alt="Editar"
-              />
-            </a>
+          <button class="editar" (click)="openFormulario(tarea)">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s"
+              alt="Editar"
+            />
           </button>
           <button class="eliminar" (click)="eliminarTarea(tarea.id)">
             <img

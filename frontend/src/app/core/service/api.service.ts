@@ -28,15 +28,12 @@ export class TareasService {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  crearTarea(tarea: { titulo: string; descripcion: string }): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}`, tarea);
+  crearTarea(tarea: Tarea): Observable<Tarea> {
+    return this.http.post<Tarea>(this.apiUrl, tarea);
   }
 
-  editarTarea(
-    id: number,
-    tarea: { titulo: string; descripcion: string }
-  ): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${id}`, tarea);
+  editarTarea(tarea: Tarea): Observable<Tarea> {
+    return this.http.put<Tarea>(`${this.apiUrl}/${tarea.id}`, tarea);
   }
 
   eliminarTarea(id: number): Observable<any> {

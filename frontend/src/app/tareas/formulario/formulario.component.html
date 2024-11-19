@@ -1,23 +1,30 @@
-<h1 mat-dialog-title>{{ data ? "Editar" : "Crear" }} Tarea</h1>
+<h1 mat-dialog-title>{{ data ? "Editar" : "Crear" }} tarea</h1>
 <div mat-dialog-content>
-  <mat-form-field>
-    <mat-label>Nombre</mat-label>
-    <input
-      matInput
-      [(ngModel)]="tarea.titulo"
-      placeholder="Nombre de la tarea"
-    />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Descripción</mat-label>
-    <input
-      matInput
-      [(ngModel)]="tarea.descripcion"
-      placeholder="Descripción de la tarea"
-    />
-  </mat-form-field>
+  <div>
+    <label>Titulo de la tarea:</label>
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="tarea.titulo"
+        placeholder="Nombre de la tarea"
+      />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <label>Descripción de la tarea:</label>
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="tarea.descripcion"
+        placeholder="Descripción de la tarea"
+      />
+    </mat-form-field>
+  </div>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="cancel()">Cancelar</button>
-  <button mat-button (click)="saveChanges()">Guardar</button>
+  <button class="edit-btn" mat-button (click)="cancel()">Cancelar</button>
+  <button class="add-task-btn" mat-button (click)="saveChanges()">
+    Guardar
+  </button>
 </div>

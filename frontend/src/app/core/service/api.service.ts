@@ -24,10 +24,6 @@ export class TareasService {
     return data;
   }
 
-  obtenerTareaPorId(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
-  }
-
   crearTarea(tarea: Tarea): Observable<Tarea> {
     return this.http.post<Tarea>(this.apiUrl, tarea);
   }

@@ -30,7 +30,7 @@ app.post("/tareas", (req, res) => {
 
 // Endpoint para obtener todas las tareas (GET)
 app.get("/tareas", (req, res) => {
-  const query = "SELECT * FROM tarea";
+  const query = "SELECT * FROM tarea ORDER BY id DESC";
   db.query(query, (err, results) => {
     if (err) return res.status(500).send("Error al obtener las tareas");
     res.json(results);

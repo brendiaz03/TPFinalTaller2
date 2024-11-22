@@ -8,46 +8,48 @@
     <img src="assets/imagenes/box.png" alt="No data" class="no-data-icon" />
     <p>Aún no hay datos cargados</p>
   </div>
-<div>
-  <table *ngIf="tareas.length > 0" class="task-table">
-    <thead>
-      <tr>
-        <th>Completada</th>
-        <th>Título</th>
-        <th>Descripción</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let tarea of tareas">
-        <td>
-          <input
-            type="checkbox"
-            [(ngModel)]="tarea.completada"
-            (change)="toggleCompletada(tarea)"
-          />
-        </td>
-        <td [ngClass]="{ tachar: tarea.completada }">{{ tarea.titulo }}</td>
-        <td [ngClass]="{ tachar: tarea.completada }">{{ tarea.descripcion }}</td>
-        <td class="actions">
-          <button class="editar" (click)="openFormulario(tarea)">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s"
-              alt="Editar"
+  <div>
+    <table *ngIf="tareas.length > 0" class="task-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarea of tareas">
+          <td>
+            <input
+              type="checkbox"
+              [(ngModel)]="tarea.completada"
+              (change)="toggleCompletada(tarea)"
             />
-          </button>
-          <button
-            class="eliminar"
-            (click)="openConfirmarModal(tarea.id, tarea.titulo)"
-          >
-            <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/006/692/167/small/bin-icon-template-black-color-editable-bin-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg"
-              alt="Eliminar"
-            />
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>  
-</div>
+          </td>
+          <td [ngClass]="{ tachar: tarea.completada }">{{ tarea.titulo }}</td>
+          <td [ngClass]="{ tachar: tarea.completada }">
+            {{ tarea.descripcion }}
+          </td>
+          <td class="actions">
+            <button class="editar" (click)="openFormulario(tarea)">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwY5SmjC7qySvytNJxzgK6AabpgVgdCVtwrg&s"
+                alt="Editar"
+              />
+            </button>
+            <button
+              class="eliminar"
+              (click)="openConfirmarModal(tarea.id, tarea.titulo)"
+            >
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/006/692/167/small/bin-icon-template-black-color-editable-bin-icon-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg"
+                alt="Eliminar"
+              />
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -45,7 +45,6 @@ export class TareasComponent implements OnInit {
   toggleCompletada(tarea: Tarea): void {
     this.tareasService.editarTarea(tarea).subscribe(
       () => {
-        console.log('Estado actualizado: ', tarea.completada);
       },
       (error) => {
         console.error('Error al actualizar la tarea:', error);

@@ -18,9 +18,7 @@ export class TareasService {
   constructor(private http: HttpClient) {}
 
   obtenerTareas(): Observable<Tarea[]> {
-    console.log('Entro al service: ');
     const data = this.http.get<Tarea[]>(this.apiUrl);
-    console.log('Data del service: ', data);
     return data;
   }
 

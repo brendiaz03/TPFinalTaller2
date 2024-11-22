@@ -46,7 +46,6 @@ export class FormularioComponent {
     if (this.data?.id) {
       this.tareasService.editarTarea(tareaGuardada).subscribe({
         next: (respuesta) => {
-          console.log('Tarea actualizada:', respuesta);
           this.dialogRef.close(respuesta);
         },
         error: (error) => {
@@ -56,7 +55,6 @@ export class FormularioComponent {
     } else {
       this.tareasService.crearTarea(this.tarea).subscribe({
         next: (respuesta) => {
-          console.log('Tarea creada:', respuesta);
           this.dialogRef.close(respuesta);
         },
         error: (error) => console.error('Error al crear tarea:', error),

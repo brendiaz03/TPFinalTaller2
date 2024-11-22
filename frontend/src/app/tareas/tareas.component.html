@@ -20,13 +20,18 @@
       </thead>
       <tbody>
         <tr *ngFor="let tarea of tareas">
-          <td>
+          <td class="class_center_elements">
+            <div class="cntr">
             <input
-              type="checkbox"
-              [(ngModel)]="tarea.completada"
-              (change)="toggleCompletada(tarea)"
-            />
-          </td>
+                          type="checkbox"
+                          id="cbx-{{tarea.id}}"
+                          class="hidden-xs-up"
+                          [(ngModel)]="tarea.completada"
+                          (change)="toggleCompletada(tarea)"
+                        />
+            <label for="cbx-{{tarea.id}}" class="cbx"></label>
+            </div>
+            </td>
           <td [ngClass]="{ tachar: tarea.completada }">{{ tarea.titulo }}</td>
           <td [ngClass]="{ tachar: tarea.completada }">
             {{ tarea.descripcion }}
